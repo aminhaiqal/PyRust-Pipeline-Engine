@@ -1,18 +1,15 @@
 use pyo3::prelude::*;
 
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
 
 #[pyfunction]
-fn py_add(left: u64, right: u64) -> u64 {
-    add(left, right)
+fn process(data: Vec<i32>) -> Vec<i32> {
+    data.into_iter().map(|x| x * 2).collect()
 }
 
 #[pymodule]
-mod calc {
+mod rpipeline {
     #[pymodule_export]
-    use crate::py_add;
+    use crate::process;
 }
 
 #[cfg(test)]
@@ -21,7 +18,7 @@ mod tests {
 
     #[test]
     fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+        let result = process(Vec::from([2,3])); // process([2,3].to_vec()); process([2,3].into());
+        assert_eq!(result, [4, 6]);
     }
 }
