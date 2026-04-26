@@ -1,0 +1,11 @@
+[package]
+name = "my_rust_module"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "calc"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.26", features = ["extension-module"] }

@@ -1,0 +1,81 @@
+# =========================
+
+# Python (uv / general)
+
+# =========================
+
+**pycache**/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environment
+
+.venv/
+venv/
+
+# uv
+
+uv.lock  # remove this line if you WANT reproducible lockfiles committed
+
+# Packaging / build
+
+build/
+dist/
+*.egg-info/
+
+# Testing / coverage
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+
+.vscode/
+.idea/
+
+# =========================
+
+# Rust (Cargo)
+
+# =========================
+
+# Compiled artifacts
+
+target/
+
+# Backup files
+
+**/*.rs.bk
+
+# macOS / Linux
+
+.DS_Store
+
+# =========================
+
+# Maturin / Python-Rust bridge
+
+# =========================
+
+# Generated extension modules (if built locally)
+
+*.so
+*.pyd
+*.dll
+
+# Maturin build cache
+
+.maturin/
+
+# =========================
+
+# Misc
+
+# =========================
+
+*.log
+*.tmp
+*.swp
